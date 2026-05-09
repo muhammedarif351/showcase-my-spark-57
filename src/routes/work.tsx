@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import wedding from "@/assets/work-wedding.jpg";
-import film from "@/assets/work-film.jpg";
-import product from "@/assets/work-product.jpg";
-import event from "@/assets/work-event.jpg";
-import social from "@/assets/work-social.jpg";
-import brand from "@/assets/work-brand.jpg";
+import rain from "@/assets/photo-rain.jpg";
+import mist from "@/assets/photo-mist.jpg";
+import cat from "@/assets/photo-cat.jpg";
+import ibex from "@/assets/photo-ibex.jpg";
+import bike from "@/assets/photo-bike.jpg";
+import parrot from "@/assets/photo-parrot.jpg";
+import red from "@/assets/photo-red.jpg";
 
 export const Route = createFileRoute("/work")({
   head: () => ({
@@ -20,12 +21,13 @@ export const Route = createFileRoute("/work")({
 });
 
 const PROJECTS = [
-  { img: wedding, kind: "Wedding", title: "Aishwarya & Rohan", year: "2024", body: "Two-day Kerala wedding documented in candid and editorial frames.", span: "md:col-span-7 aspect-[4/5]" },
-  { img: film, kind: "Short Film", title: "After Hours", year: "2024", body: "Atmospheric set diary — concept, direction and edit.", span: "md:col-span-5 aspect-[4/5]" },
-  { img: event, kind: "Live Event", title: "Coastal Festival", year: "2023", body: "Full-night stage coverage and post-event reel package.", span: "md:col-span-5 aspect-[5/4]" },
-  { img: product, kind: "Commercial", title: "Maison No. 7", year: "2025", body: "Cinematic product films and stills for a fragrance launch.", span: "md:col-span-7 aspect-[5/4]" },
-  { img: social, kind: "Reels", title: "Studio Series", year: "2024", body: "Vertical-first content built around a single warm gel.", span: "md:col-span-4 aspect-[4/5]" },
-  { img: brand, kind: "Brand", title: "Quiet Editions", year: "2025", body: "Identity stills and poster system for a hospitality brand.", span: "md:col-span-8 aspect-[5/4]" },
+  { img: rain, kind: "Street / Festival", title: "Monsoon Roar", year: "2023", body: "A frozen second of joy — water, light and a crowd held in suspended motion." },
+  { img: red, kind: "Portrait", title: "Lady in Red", year: "2024", body: "Forest-floor editorial portrait shot in available light, Kerala." },
+  { img: mist, kind: "Landscape", title: "Munnar Fog", year: "2024", body: "A lone tree, three birds and the silence of a tea-estate dawn." },
+  { img: bike, kind: "Product / Mood", title: "KL 25", year: "2023", body: "A Royal Enfield resting in deep forest green — moody automotive frame." },
+  { img: parrot, kind: "Wildlife", title: "Backyard Parrot", year: "2024", body: "Telephoto study of a rose-ringed parakeet in monsoon-soft greens." },
+  { img: ibex, kind: "Wildlife", title: "Nilgiri Tahr", year: "2024", body: "Roadside encounter with a Nilgiri Tahr on the Munnar climb." },
+  { img: cat, kind: "Quiet Frames", title: "Garden Cat", year: "2024", body: "A white cat at golden hour — bokeh, breath and stillness." },
 ];
 
 function Work() {
@@ -44,8 +46,18 @@ function Work() {
 
       <section className="mx-auto max-w-[1400px] px-6 md:px-10 pb-24">
         <div className="grid md:grid-cols-12 gap-6">
-          {PROJECTS.map((p, i) => (
-            <article key={p.title} className={`group relative overflow-hidden ${p.span}`}>
+          {PROJECTS.map((p, i) => {
+            const spans = [
+              "md:col-span-7 aspect-[4/5]",
+              "md:col-span-5 aspect-[4/5]",
+              "md:col-span-5 aspect-[5/4]",
+              "md:col-span-7 aspect-[5/4]",
+              "md:col-span-4 aspect-[4/5]",
+              "md:col-span-4 aspect-[4/5]",
+              "md:col-span-4 aspect-[4/5]",
+            ];
+            return (
+            <article key={p.title} className={`group relative overflow-hidden ${spans[i]}`}>
               <img
                 src={p.img}
                 alt={p.title}
