@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import portrait from "@/assets/portrait.png";
-import wedding from "@/assets/work-wedding.jpg";
-import film from "@/assets/work-film.jpg";
-import product from "@/assets/work-product.jpg";
-import event from "@/assets/work-event.jpg";
+import rain from "@/assets/photo-rain.jpg";
+import red from "@/assets/photo-red.jpg";
+import bike from "@/assets/photo-bike.jpg";
+import mist from "@/assets/photo-mist.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -103,10 +103,10 @@ function Index() {
         </div>
 
         <div className="grid md:grid-cols-12 gap-6">
-          <FeatureCard className="md:col-span-7 md:row-span-2 aspect-[4/5]" img={wedding} kind="Photography" title="Bridal Editorial" year="2024" />
-          <FeatureCard className="md:col-span-5 aspect-[5/4]" img={film} kind="Cinematography" title="Set Diary" year="2024" />
-          <FeatureCard className="md:col-span-5 aspect-[5/4]" img={event} kind="Event" title="Stage Lights" year="2023" />
-          <FeatureCard className="md:col-span-5 aspect-[4/5]" img={product} kind="Commercial" title="Maison No. 7" year="2025" />
+          <FeatureCard className="md:col-span-7 md:row-span-2 aspect-[4/5]" img={red} kind="Portrait" title="Lady in Red" year="2024" />
+          <FeatureCard className="md:col-span-5 aspect-[5/4]" img={rain} kind="Street" title="Monsoon Roar" year="2023" />
+          <FeatureCard className="md:col-span-5 aspect-[5/4]" img={mist} kind="Landscape" title="Munnar Fog" year="2024" />
+          <FeatureCard className="md:col-span-5 aspect-[4/5]" img={bike} kind="Mood" title="KL 25" year="2023" />
           <div className="md:col-span-7 flex flex-col justify-end p-10 border border-border">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-4">— Disciplines</p>
             <ul className="space-y-3 font-display text-2xl md:text-3xl">
