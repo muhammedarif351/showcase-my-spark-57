@@ -14,7 +14,7 @@ export const Route = createFileRoute("/work")({
       { name: "description", content: "Selected photography, videography, brand and short-film work spanning weddings, products, events and creative campaigns." },
       { property: "og:title", content: "Work — Muhammed Arif" },
       { property: "og:description", content: "Photography, video and direction across weddings, brands and films." },
-      { property: "og:image", content: wedding },
+      { property: "og:image", content: rain },
     ],
   }),
   component: Work,
