@@ -27,14 +27,14 @@ function Index() {
       <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden grain">
         <div className="absolute inset-0">
           <img
-            src={hero}
-            alt="Muhammed Arif behind the camera"
+            src={portrait}
+            alt="Muhammed Arif looking up toward a hand of light"
             width={1080}
             height={1920}
-            className="h-full w-full object-cover slow-zoom"
+            className="h-full w-full object-cover object-right slow-zoom"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 md:via-background/70 to-background/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
         </div>
 
         <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 pt-24 md:pt-40 pb-20">
