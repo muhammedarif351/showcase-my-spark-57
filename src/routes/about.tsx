@@ -33,7 +33,7 @@ function About() {
             {[
               ["Born", "Kerala, India · 1995"],
               ["Based", "Saihat, Dammam — KSA"],
-              ["Languages", "English · Tamil · Malayalam"],
+              ["Languages", "English · Hindi · Arabic"],
               ["Diploma", "Mechanical Engineering, 2015"],
             ].map(([k, v]) => (
               <div key={k} className="flex justify-between border-b border-border pb-3">
@@ -83,7 +83,9 @@ function About() {
               { yr: "2023 — now", role: "Building Maintenance & Admin Support", org: "Al-Dur Specialized Medical Center · Saihat, Dammam", body: "Facility operations, electrical & plumbing support, CCTV installation, technical coordination across the medical center." },
               { yr: "2020 — 2022", role: "Construction Supervisor", org: "Construction Co. · Saudi Arabia", body: "Site supervision, electrical & plumbing coordination, worker follow-up, material monitoring and progress reporting." },
               { yr: "2018 — 2020", role: "Wedding Photographer", org: "Independent · Kerala, India", body: "Candid and traditional wedding coverage, client coordination, photo selection and post-production." },
-              { yr: "2015", role: "Diploma in Mechanical Engineering", org: "ISET College, Charummood — 72%", body: "Foundation in mechanical systems, troubleshooting and structured engineering thinking." },
+              { yr: "2015", role: "Diploma in Mechanical Engineering", org: "ISET College, Chanmur — 72%", body: "Foundation in mechanical systems, troubleshooting and structured engineering thinking." },
+              { yr: "2012", role: "Higher Secondary Certificate", org: "APPM VHSS, Avanavanchery — 62%", body: "Completed HSC in Kerala before moving into technical training." },
+              { yr: "2010", role: "Secondary School Leaving Certificate", org: "VHSS, Arakunnu — 60%", body: "Schooling completed in Arakunnu, Kerala." },
             ].map((row) => (
               <li key={row.yr} className="grid md:grid-cols-12 gap-6 border-t border-border pt-8">
                 <div className="md:col-span-3 font-mono text-xs uppercase tracking-[0.25em] text-gold">{row.yr}</div>

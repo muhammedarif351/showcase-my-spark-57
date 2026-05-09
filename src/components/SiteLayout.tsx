@@ -107,7 +107,7 @@ export function SiteFooter() {
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">Contact</p>
           <ul className="space-y-2 text-sm">
             <li><a href="mailto:muhammedarif351@gmail.com" className="hover:text-gold">muhammedarif351@gmail.com</a></li>
-            <li className="text-muted-foreground">+91 96333 366228 · India</li>
+            <li className="text-muted-foreground">+91 96333 36228 · India</li>
             <li className="text-muted-foreground">+966 54 884 2832 · KSA</li>
           </ul>
         </div>
