@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import hero from "@/assets/hero.jpg";
+import portrait from "@/assets/portrait.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -8,7 +8,7 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "From mechanical engineering and construction supervision in Saudi Arabia to wedding photography and creative direction — the story of a self-taught visual producer." },
       { property: "og:title", content: "About — Muhammed Arif" },
       { property: "og:description", content: "Self-taught creative. Decade of technical craft. Cinematic visual storytelling." },
-      { property: "og:image", content: hero },
+      { property: "og:image", content: portrait },
     ],
   }),
   component: About,
@@ -27,7 +27,7 @@ function About() {
       <section className="mx-auto max-w-[1400px] px-6 md:px-10 pb-24 grid md:grid-cols-12 gap-12 md:gap-16">
         <div className="md:col-span-5">
           <div className="aspect-[3/4] overflow-hidden">
-            <img src={hero} alt="Muhammed Arif portrait" loading="lazy" className="h-full w-full object-cover" />
+            <img src={portrait} alt="Muhammed Arif portrait" loading="lazy" className="h-full w-full object-cover" />
           </div>
           <dl className="mt-10 space-y-4 font-mono text-xs uppercase tracking-[0.2em]">
             {[
