@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import hero from "@/assets/portrait.png";
+import portrait from "@/assets/portrait.png";
 import wedding from "@/assets/work-wedding.jpg";
 import film from "@/assets/work-film.jpg";
 import product from "@/assets/work-product.jpg";
@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Photographer, videographer & creative producer building visual stories from concept to final cut. Based between Kerala and Saudi Arabia." },
       { property: "og:title", content: "Muhammed Arif — Cinematic Visual Storyteller" },
       { property: "og:description", content: "Photography, video, direction. Cinematic work from Kerala & KSA." },
-      { property: "og:image", content: hero },
+      { property: "og:image", content: portrait },
     ],
   }),
   component: Index,
