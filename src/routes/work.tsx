@@ -76,7 +76,8 @@ function Work() {
                 </div>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </section>
 
