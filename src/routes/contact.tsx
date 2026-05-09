@@ -36,7 +36,7 @@ function Contact() {
           <div className="grid grid-cols-2 gap-6">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">India</p>
-              <a href="tel:+919633336628" className="font-display text-xl hover:text-gold">+91 96333 366228</a>
+              <a href="tel:+919633336228" className="font-display text-xl hover:text-gold">+91 96333 36228</a>
             </div>
             <div>
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">Saudi Arabia</p>
@@ -54,7 +54,7 @@ function Contact() {
           </div>
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-3">Languages</p>
-            <p className="font-display text-xl">English · Tamil · Malayalam</p>
+            <p className="font-display text-xl">English · Hindi · Arabic</p>
           </div>
         </div>
 
