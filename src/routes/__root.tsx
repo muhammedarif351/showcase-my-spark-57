@@ -78,6 +78,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Muhammed Arif S" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Muhammed Arif — Creative Media Producer & Photographer" },
+      { name: "twitter:title", content: "Muhammed Arif — Creative Media Producer & Photographer" },
+      { property: "og:description", content: "Photographer, videographer, editor & creative director crafting cinematic stories from concept to final cut." },
+      { name: "twitter:description", content: "Photographer, videographer, editor & creative director crafting cinematic stories from concept to final cut." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/2487df20-b14b-4862-a1c2-d6dfaeb8f373" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/2487df20-b14b-4862-a1c2-d6dfaeb8f373" },
     ],
     links: [
       {
