@@ -28,7 +28,23 @@ const CHAPTERS = [
   { n: "03", chapter: "Munnar Fog", kind: "Landscape · 2024", img: mist, title: "Silence at altitude.", body: "Tea hills under a slow ceiling of cloud. Patience over plan.", stat: "5am", statLabel: "Call time · cold" },
 ];
 
+const REEL_URL = "https://www.instagram.com/reel/DVzD0g7jUKm/";
+
 function Index() {
+  useEffect(() => {
+    const id = "instagram-embed-script";
+    if (document.getElementById(id)) {
+      // @ts-expect-error instgrm global
+      window.instgrm?.Embeds?.process();
+      return;
+    }
+    const s = document.createElement("script");
+    s.id = id;
+    s.async = true;
+    s.src = "https://www.instagram.com/embed.js";
+    document.body.appendChild(s);
+  }, []);
+
   return (
     <>
       {/* HERO — split editorial */}
