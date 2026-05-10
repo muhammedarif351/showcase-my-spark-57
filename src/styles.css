@@ -38,29 +38,29 @@
 }
 
 :root {
-  --radius: 0.25rem;
-  /* Noir & Gold — cinematic editorial */
-  --background: oklch(0.10 0.005 60);
-  --foreground: oklch(0.95 0.02 80);
-  --card: oklch(0.13 0.008 60);
-  --card-foreground: oklch(0.95 0.02 80);
-  --popover: oklch(0.13 0.008 60);
-  --popover-foreground: oklch(0.95 0.02 80);
-  --primary: oklch(0.78 0.13 80);
-  --primary-foreground: oklch(0.10 0.005 60);
-  --secondary: oklch(0.18 0.01 60);
-  --secondary-foreground: oklch(0.95 0.02 80);
-  --muted: oklch(0.16 0.008 60);
-  --muted-foreground: oklch(0.62 0.02 75);
-  --accent: oklch(0.78 0.13 80);
-  --accent-foreground: oklch(0.10 0.005 60);
-  --gold: oklch(0.78 0.13 80);
-  --gold-soft: oklch(0.88 0.08 85);
+  --radius: 0;
+  /* Pure noir studio — madebycat-inspired */
+  --background: oklch(0.06 0 0);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.09 0 0);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.09 0 0);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: oklch(0.97 0 0);
+  --primary-foreground: oklch(0.06 0 0);
+  --secondary: oklch(0.14 0 0);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.12 0 0);
+  --muted-foreground: oklch(0.58 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.06 0 0);
+  --gold: oklch(0.97 0 0);
+  --gold-soft: oklch(0.85 0 0);
   --destructive: oklch(0.6 0.2 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.22 0.01 70 / 0.6);
-  --input: oklch(0.22 0.01 70);
-  --ring: oklch(0.78 0.13 80);
+  --border: oklch(0.22 0 0 / 0.5);
+  --input: oklch(0.22 0 0);
+  --ring: oklch(0.97 0 0);
 }
 
 .dark { color-scheme: dark; }
