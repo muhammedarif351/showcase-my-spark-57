@@ -94,11 +94,14 @@
     mix-blend-mode: overlay;
   }
   .gold-text {
-    background: linear-gradient(180deg, var(--gold-soft) 0%, var(--gold) 60%, oklch(0.55 0.12 70) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--foreground);
+    font-style: italic;
+    font-weight: 300;
   }
+  .rotate-text { animation: spin-slow 24s linear infinite; }
+  @keyframes spin-slow { to { transform: rotate(360deg); } }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   .hairline { border-top: 1px solid var(--color-border); }
   .marquee {
     display: flex;
