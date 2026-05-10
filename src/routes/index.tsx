@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import portrait from "@/assets/portrait.png";
+import portrait from "@/assets/portrait-hero.png";
+import portraitArt from "@/assets/portrait-art.png";
 import rain from "@/assets/photo-rain.jpg";
 import red from "@/assets/photo-red.jpg";
 import bike from "@/assets/photo-bike.jpg";
@@ -29,72 +30,98 @@ const CHAPTERS = [
 function Index() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={portrait}
-            alt="Muhammed Arif"
-            className="h-full w-full object-cover object-right opacity-40 md:opacity-55"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60" />
+      {/* HERO — split editorial */}
+      <section className="relative min-h-screen border-b border-border overflow-hidden">
+        {/* top meta bar */}
+        <div className="absolute top-0 left-0 right-0 z-20 px-6 md:px-10 pt-24 md:pt-28 flex justify-between font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
+          <span className="flex items-center gap-3">
+            <span className="h-1.5 w-1.5 rounded-full bg-foreground animate-pulse" />
+            Visual Storytelling Studio · Est. 2015
+          </span>
+          <span className="hidden md:inline">N 10°00' · E 76°16' — Kerala / KSA</span>
         </div>
 
-        <div className="relative mx-auto max-w-[1500px] w-full px-6 md:px-10 pt-24 pb-20">
-          <div className="flex items-center gap-3 mb-10 reveal">
-            <span className="h-1.5 w-1.5 rounded-full bg-foreground" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
-              Visual Storytelling Studio · Est. 2015
-            </span>
-          </div>
+        <div className="grid md:grid-cols-12 min-h-screen pt-40 md:pt-44">
+          {/* LEFT — type */}
+          <div className="md:col-span-7 relative px-6 md:px-10 pb-24 md:pb-16 flex flex-col justify-between">
+            <h1 className="font-display font-light text-[16vw] md:text-[11rem] leading-[0.86] tracking-[-0.05em]">
+              Frames<br />
+              <em className="not-italic text-muted-foreground">that</em><br />
+              travel<span className="text-foreground">.</span>
+            </h1>
 
-          <h1 className="font-display font-light text-[14vw] md:text-[10rem] leading-[0.88] tracking-[-0.05em] reveal max-w-[16ch]">
-            We craft <span className="inline-block align-middle mx-2">✦</span><br />
-            <em className="not-italic font-light">cinematic</em> stories<br />
-            <span className="text-muted-foreground">that travel.</span>
-          </h1>
-
-          <div className="mt-16 grid md:grid-cols-12 gap-8 items-end">
-            <p className="md:col-span-6 text-base md:text-lg text-muted-foreground leading-relaxed reveal">
-              <span className="text-foreground">Muhammed Arif</span> — a one-person studio building stills,
-              motion and direction from raw concept to final cut. A decade of frames between Kerala and KSA.
-            </p>
-            <div className="md:col-span-6 flex md:justify-end gap-4 reveal">
-              <Link
-                to="/work"
-                className="group inline-flex items-center gap-3 bg-foreground text-background px-7 py-3.5 font-mono text-[11px] uppercase tracking-[0.25em] hover:bg-muted-foreground transition"
-              >
-                View work <span className="group-hover:translate-x-1 transition">→</span>
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-3 border border-border px-7 py-3.5 font-mono text-[11px] uppercase tracking-[0.25em] hover:border-foreground transition"
-              >
-                Commission
-              </Link>
+            <div className="mt-16 md:mt-0 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 max-w-3xl">
+              <div className="col-span-2 md:col-span-3">
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
+                  <span className="text-foreground">Muhammed Arif</span> — a one-person studio building stills,
+                  motion and direction from concept to final cut.
+                </p>
+              </div>
+              <div className="flex gap-3 col-span-2">
+                <Link
+                  to="/work"
+                  className="group inline-flex items-center gap-3 bg-foreground text-background px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.25em] hover:bg-muted-foreground transition"
+                >
+                  View work <span className="group-hover:translate-x-1 transition">→</span>
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-3 border border-border px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.25em] hover:border-foreground transition"
+                >
+                  Commission
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* Rotating circular badge */}
-          <div className="hidden lg:block absolute bottom-12 right-10 w-32 h-32">
-            <svg viewBox="0 0 200 200" className="rotate-text w-full h-full text-foreground/80">
-              <defs>
-                <path id="circle" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" />
-              </defs>
-              <text fontSize="14" letterSpacing="4" fill="currentColor" fontFamily="Space Grotesk">
-                <textPath href="#circle">Muhammed Arif · Visual Studio · Kerala / KSA · </textPath>
-              </text>
-            </svg>
-            <span className="absolute inset-0 flex items-center justify-center text-foreground text-xl">✦</span>
+          {/* RIGHT — portrait */}
+          <div className="md:col-span-5 relative min-h-[60vh] md:min-h-screen border-t md:border-t-0 md:border-l border-border bg-card">
+            <img
+              src={portrait}
+              alt="Muhammed Arif — Photographer & Director"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent md:bg-gradient-to-l md:from-transparent md:via-transparent md:to-background/30" />
+
+            {/* corner ticks */}
+            <span className="absolute top-4 left-4 w-3 h-3 border-t border-l border-foreground/60" />
+            <span className="absolute top-4 right-4 w-3 h-3 border-t border-r border-foreground/60" />
+            <span className="absolute bottom-4 left-4 w-3 h-3 border-b border-l border-foreground/60" />
+            <span className="absolute bottom-4 right-4 w-3 h-3 border-b border-r border-foreground/60" />
+
+            {/* film-strip caption */}
+            <div className="absolute top-6 left-6 right-6 flex justify-between font-mono text-[9px] uppercase tracking-[0.3em] text-foreground/70">
+              <span>Roll · 01</span>
+              <span>ISO 1600 · f/1.8</span>
+            </div>
+            <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end font-mono text-[10px] uppercase tracking-[0.3em] text-foreground">
+              <div>
+                <p className="text-foreground/60 mb-1">Subject</p>
+                <p>Muhammed Arif S</p>
+              </div>
+              <div className="text-right">
+                <p className="text-foreground/60 mb-1">Frame</p>
+                <p>001 / ∞</p>
+              </div>
+            </div>
+
+            {/* rotating badge */}
+            <div className="hidden md:block absolute -left-16 top-1/2 -translate-y-1/2 w-32 h-32 z-10">
+              <svg viewBox="0 0 200 200" className="rotate-text w-full h-full text-foreground">
+                <defs>
+                  <path id="circle" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" />
+                </defs>
+                <text fontSize="13" letterSpacing="3" fill="currentColor" fontFamily="Space Grotesk">
+                  <textPath href="#circle">Muhammed Arif · Visual Studio · Kerala / KSA · </textPath>
+                </text>
+              </svg>
+              <span className="absolute inset-0 flex items-center justify-center bg-background rounded-full w-10 h-10 m-auto text-foreground text-sm border border-border">✦</span>
+            </div>
           </div>
         </div>
 
         <div className="absolute bottom-6 left-6 md:left-10 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
           Scroll ↓
-        </div>
-        <div className="absolute bottom-6 right-6 md:right-10 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-          100<span className="text-foreground/60">%</span>
         </div>
       </section>
 
