@@ -27,10 +27,11 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 h-16 flex items-center justify-between">
-        <Link to="/" className="group flex items-baseline gap-2">
-          <span className="font-display text-xl tracking-tight">Muhammed Arif</span>
-          <span className="hidden md:inline text-[10px] font-mono uppercase text-muted-foreground tracking-[0.25em]">
-            — Studio
+        <Link to="/" className="group flex items-center gap-2.5">
+          <span className="h-2 w-2 rounded-full bg-foreground" />
+          <span className="font-display font-medium text-base tracking-[-0.02em]">muhammedarif</span>
+          <span className="hidden md:inline text-[10px] font-mono uppercase text-muted-foreground tracking-[0.25em] ml-1">
+            / studio
           </span>
         </Link>
 
@@ -41,12 +42,12 @@ export function SiteHeader() {
               <Link
                 key={item.to}
                 to={item.to}
-                className="group relative text-sm font-mono uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
+                className="group relative text-[11px] font-mono uppercase tracking-[0.25em] text-muted-foreground hover:text-foreground transition-colors"
               >
-                <span className="text-gold mr-2 text-[10px]">0{i + 1}</span>
+                <span className="text-foreground/40 mr-2">0{i + 1}</span>
                 {item.label}
                 {active && (
-                  <span className="absolute -bottom-2 left-0 right-0 h-px bg-gold" />
+                  <span className="absolute -bottom-2 left-0 right-0 h-px bg-foreground" />
                 )}
               </Link>
             );

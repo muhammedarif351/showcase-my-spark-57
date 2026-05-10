@@ -4,18 +4,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@font-face {
-  font-family: "Cormorant";
-  src: url("https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjQAllvuQWJ5heb_w.woff2") format("woff2");
-  font-weight: 300 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @theme inline {
-  --font-display: "Cormorant Garamond", serif;
+  --font-display: "Space Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
@@ -46,29 +38,29 @@
 }
 
 :root {
-  --radius: 0.25rem;
-  /* Noir & Gold — cinematic editorial */
-  --background: oklch(0.10 0.005 60);
-  --foreground: oklch(0.95 0.02 80);
-  --card: oklch(0.13 0.008 60);
-  --card-foreground: oklch(0.95 0.02 80);
-  --popover: oklch(0.13 0.008 60);
-  --popover-foreground: oklch(0.95 0.02 80);
-  --primary: oklch(0.78 0.13 80);
-  --primary-foreground: oklch(0.10 0.005 60);
-  --secondary: oklch(0.18 0.01 60);
-  --secondary-foreground: oklch(0.95 0.02 80);
-  --muted: oklch(0.16 0.008 60);
-  --muted-foreground: oklch(0.62 0.02 75);
-  --accent: oklch(0.78 0.13 80);
-  --accent-foreground: oklch(0.10 0.005 60);
-  --gold: oklch(0.78 0.13 80);
-  --gold-soft: oklch(0.88 0.08 85);
+  --radius: 0;
+  /* Pure noir studio — madebycat-inspired */
+  --background: oklch(0.06 0 0);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.09 0 0);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.09 0 0);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: oklch(0.97 0 0);
+  --primary-foreground: oklch(0.06 0 0);
+  --secondary: oklch(0.14 0 0);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.12 0 0);
+  --muted-foreground: oklch(0.58 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.06 0 0);
+  --gold: oklch(0.97 0 0);
+  --gold-soft: oklch(0.85 0 0);
   --destructive: oklch(0.6 0.2 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.22 0.01 70 / 0.6);
-  --input: oklch(0.22 0.01 70);
-  --ring: oklch(0.78 0.13 80);
+  --border: oklch(0.22 0 0 / 0.5);
+  --input: oklch(0.22 0 0);
+  --ring: oklch(0.97 0 0);
 }
 
 .dark { color-scheme: dark; }
@@ -83,7 +75,7 @@
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em; }
+  h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.04em; }
   .font-display { font-family: var(--font-display); }
   .font-mono { font-family: var(--font-mono); }
 }
@@ -102,11 +94,14 @@
     mix-blend-mode: overlay;
   }
   .gold-text {
-    background: linear-gradient(180deg, var(--gold-soft) 0%, var(--gold) 60%, oklch(0.55 0.12 70) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--foreground);
+    font-style: italic;
+    font-weight: 300;
   }
+  .rotate-text { animation: spin-slow 24s linear infinite; }
+  @keyframes spin-slow { to { transform: rotate(360deg); } }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   .hairline { border-top: 1px solid var(--color-border); }
   .marquee {
     display: flex;

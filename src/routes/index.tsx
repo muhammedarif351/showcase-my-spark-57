@@ -4,162 +4,250 @@ import rain from "@/assets/photo-rain.jpg";
 import red from "@/assets/photo-red.jpg";
 import bike from "@/assets/photo-bike.jpg";
 import mist from "@/assets/photo-mist.jpg";
+import ibex from "@/assets/photo-ibex.jpg";
+import parrot from "@/assets/photo-parrot.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Muhammed Arif — Cinematic Visual Storyteller" },
-      { name: "description", content: "Photographer, videographer & creative producer building visual stories from concept to final cut. Based between Kerala and Saudi Arabia." },
-      { property: "og:title", content: "Muhammed Arif — Cinematic Visual Storyteller" },
-      { property: "og:description", content: "Photography, video, direction. Cinematic work from Kerala & KSA." },
+      { title: "Muhammed Arif — Visual Storyteller Studio" },
+      { name: "description", content: "Photographer, videographer & creative producer. Cinematic stories from concept to final cut. Kerala / KSA." },
+      { property: "og:title", content: "Muhammed Arif — Visual Storyteller Studio" },
+      { property: "og:description", content: "Photography, video, direction. A studio of one." },
       { property: "og:image", content: portrait },
     ],
   }),
   component: Index,
 });
 
-const MARQUEE = ["Photography", "Videography", "Direction", "Editing", "Concept", "Branding", "Short Films", "Reels"];
+const CHAPTERS = [
+  { n: "01", chapter: "Lady in Red", kind: "Portrait · 2024", img: red, title: "A frame, a feeling.", body: "A controlled study in red — light shaped to carve presence from a single colour.", stat: "1", statLabel: "Frame · one shot" },
+  { n: "02", chapter: "Monsoon Roar", kind: "Street · 2023", img: rain, title: "Weather as character.", body: "Kerala's monsoon as a living protagonist — water, motion and shutter conspiring.", stat: "1/30", statLabel: "Shutter · handheld" },
+  { n: "03", chapter: "Munnar Fog", kind: "Landscape · 2024", img: mist, title: "Silence at altitude.", body: "Tea hills under a slow ceiling of cloud. Patience over plan.", stat: "5am", statLabel: "Call time · cold" },
+];
 
 function Index() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden grain">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={portrait}
-            alt="Muhammed Arif looking up toward a hand of light"
-            width={1080}
-            height={1920}
-            className="h-full w-full object-cover object-right slow-zoom"
+            alt="Muhammed Arif"
+            className="h-full w-full object-cover object-right opacity-40 md:opacity-55"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 md:via-background/70 to-background/10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/60" />
         </div>
 
-        <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 pt-24 md:pt-40 pb-20">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-8 reveal">
-              <span className="h-px w-12 bg-gold" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-gold">
-                Est. 2015 · India / KSA
-              </span>
-            </div>
-            <h1 className="font-display text-[15vw] md:text-[9rem] leading-[0.92] tracking-tight reveal">
-              Stories told<br />
-              in <em className="gold-text not-italic">light</em><br />
-              & motion.
-            </h1>
-            <p className="mt-10 max-w-xl text-lg text-muted-foreground leading-relaxed reveal">
-              I'm <span className="text-foreground">Muhammed Arif</span> — a creative media producer,
-              photographer and videographer. I build cinematic stories from raw concept to final cut,
-              with a decade of technical craft behind every frame.
+        <div className="relative mx-auto max-w-[1500px] w-full px-6 md:px-10 pt-24 pb-20">
+          <div className="flex items-center gap-3 mb-10 reveal">
+            <span className="h-1.5 w-1.5 rounded-full bg-foreground" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
+              Visual Storytelling Studio · Est. 2015
+            </span>
+          </div>
+
+          <h1 className="font-display font-light text-[14vw] md:text-[10rem] leading-[0.88] tracking-[-0.05em] reveal max-w-[16ch]">
+            We craft <span className="inline-block align-middle mx-2">✦</span><br />
+            <em className="not-italic font-light">cinematic</em> stories<br />
+            <span className="text-muted-foreground">that travel.</span>
+          </h1>
+
+          <div className="mt-16 grid md:grid-cols-12 gap-8 items-end">
+            <p className="md:col-span-6 text-base md:text-lg text-muted-foreground leading-relaxed reveal">
+              <span className="text-foreground">Muhammed Arif</span> — a one-person studio building stills,
+              motion and direction from raw concept to final cut. A decade of frames between Kerala and KSA.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4 reveal">
+            <div className="md:col-span-6 flex md:justify-end gap-4 reveal">
               <Link
                 to="/work"
-                className="group inline-flex items-center gap-3 bg-gold text-primary-foreground px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] hover:bg-gold-soft transition"
+                className="group inline-flex items-center gap-3 bg-foreground text-background px-7 py-3.5 font-mono text-[11px] uppercase tracking-[0.25em] hover:bg-muted-foreground transition"
               >
-                View Work
-                <span className="group-hover:translate-x-1 transition">→</span>
+                View work <span className="group-hover:translate-x-1 transition">→</span>
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 border border-border px-8 py-4 font-mono text-xs uppercase tracking-[0.25em] hover:border-gold hover:text-gold transition"
+                className="inline-flex items-center gap-3 border border-border px-7 py-3.5 font-mono text-[11px] uppercase tracking-[0.25em] hover:border-foreground transition"
               >
-                Commission a Project
+                Commission
               </Link>
             </div>
           </div>
 
-          <div className="absolute bottom-10 right-10 hidden md:flex flex-col items-end gap-3">
-            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Scroll</span>
-            <span className="h-16 w-px bg-gradient-to-b from-gold to-transparent" />
+          {/* Rotating circular badge */}
+          <div className="hidden lg:block absolute bottom-12 right-10 w-32 h-32">
+            <svg viewBox="0 0 200 200" className="rotate-text w-full h-full text-foreground/80">
+              <defs>
+                <path id="circle" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" />
+              </defs>
+              <text fontSize="14" letterSpacing="4" fill="currentColor" fontFamily="Space Grotesk">
+                <textPath href="#circle">Muhammed Arif · Visual Studio · Kerala / KSA · </textPath>
+              </text>
+            </svg>
+            <span className="absolute inset-0 flex items-center justify-center text-foreground text-xl">✦</span>
           </div>
+        </div>
+
+        <div className="absolute bottom-6 left-6 md:left-10 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+          Scroll ↓
+        </div>
+        <div className="absolute bottom-6 right-6 md:right-10 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+          100<span className="text-foreground/60">%</span>
         </div>
       </section>
 
-      {/* MARQUEE */}
-      <section className="border-y border-border bg-background overflow-hidden py-8">
-        <div className="marquee whitespace-nowrap">
-          {[...MARQUEE, ...MARQUEE, ...MARQUEE].map((w, i) => (
-            <span key={i} className="font-display text-5xl md:text-7xl px-8 text-muted-foreground/60">
-              {w} <span className="text-gold mx-4">✦</span>
-            </span>
+      {/* STATS BAND */}
+      <section className="border-y border-border">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-16 md:py-24 grid grid-cols-3 gap-6 md:gap-12">
+          {[
+            { n: "10", l: "Years behind the lens" },
+            { n: "200+", l: "Projects delivered" },
+            { n: "2", l: "Countries · India / KSA" },
+          ].map((s) => (
+            <div key={s.l} className="border-l border-border pl-6">
+              <p className="font-display font-light text-5xl md:text-8xl tracking-[-0.04em] leading-none">{s.n}</p>
+              <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">{s.l}</p>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* SELECTED WORK */}
-      <section className="mx-auto max-w-[1400px] px-6 md:px-10 py-24 md:py-32">
-        <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-3">— Selected work</p>
-            <h2 className="font-display text-5xl md:text-7xl leading-none">A reel of moments.</h2>
-          </div>
-          <Link to="/work" className="font-mono text-xs uppercase tracking-[0.25em] hover:text-gold transition">
-            All projects →
+      {/* DOCTRINE */}
+      <section className="mx-auto max-w-[1500px] px-6 md:px-10 py-24 md:py-40">
+        <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground mb-8">
+          00 · A Studio Doctrine
+        </p>
+        <h2 className="font-display font-light text-5xl md:text-8xl leading-[0.92] tracking-[-0.04em] max-w-[18ch]">
+          Visual work that <em className="not-italic text-muted-foreground">drives</em> real feeling.
+        </h2>
+        <p className="mt-10 font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
+          Three chapters · One belief — Concept · Capture · Edit
+        </p>
+        <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.3em] text-foreground/70">
+          Continue scrolling — chapters travel below ↓
+        </p>
+      </section>
+
+      {/* CHAPTERS */}
+      <section className="border-t border-border">
+        {CHAPTERS.map((c, i) => (
+          <article key={c.n} className="border-b border-border">
+            <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-16 md:py-24 grid md:grid-cols-12 gap-8 md:gap-12">
+              <div className="md:col-span-7 relative aspect-[4/5] md:aspect-[5/6] overflow-hidden bg-card order-2 md:order-1">
+                <img src={c.img} alt={c.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                <span className="absolute top-6 left-6 font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/80 mix-blend-difference">{c.n}</span>
+              </div>
+              <div className="md:col-span-5 flex flex-col justify-between order-1 md:order-2">
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
+                    Chapter · {c.chapter}
+                  </p>
+                  <h3 className="mt-6 font-display font-light text-4xl md:text-6xl leading-[0.95] tracking-[-0.04em]">
+                    {c.title}
+                  </h3>
+                  <p className="mt-6 text-muted-foreground leading-relaxed max-w-md">{c.body}</p>
+                  <ul className="mt-8 flex flex-wrap gap-x-3 gap-y-2 font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/70">
+                    <li>· Concept</li><li>· Capture</li><li>· Edit</li>
+                  </ul>
+                </div>
+                <div className="mt-12 md:mt-0 pt-8 border-t border-border flex items-end justify-between">
+                  <div>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-2">By the numbers</p>
+                    <p className="font-display font-light text-5xl tracking-[-0.04em]">{c.stat}</p>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">{c.statLabel}</p>
+                  </div>
+                  <Link to="/work" className="font-mono text-[10px] uppercase tracking-[0.3em] border-b border-foreground pb-1 hover:text-muted-foreground">
+                    View project →
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="mx-auto max-w-[1500px] px-6 md:px-10 pb-6 flex justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+              <span>0{i + 1} / 0{CHAPTERS.length}</span>
+              <span>{c.kind}</span>
+            </div>
+          </article>
+        ))}
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-16 flex justify-between items-center">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">000%</p>
+          <Link to="/work" className="font-display font-light text-3xl md:text-5xl tracking-[-0.04em] hover:text-muted-foreground transition">
+            View all projects →
           </Link>
         </div>
+      </section>
 
-        <div className="grid md:grid-cols-12 gap-6">
-          <FeatureCard className="md:col-span-7 md:row-span-2 aspect-[4/5]" img={red} kind="Portrait" title="Lady in Red" year="2024" />
-          <FeatureCard className="md:col-span-5 aspect-[5/4]" img={rain} kind="Street" title="Monsoon Roar" year="2023" />
-          <FeatureCard className="md:col-span-5 aspect-[5/4]" img={mist} kind="Landscape" title="Munnar Fog" year="2024" />
-          <FeatureCard className="md:col-span-5 aspect-[4/5]" img={bike} kind="Mood" title="KL 25" year="2023" />
-          <div className="md:col-span-7 flex flex-col justify-end p-10 border border-border">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-4">— Disciplines</p>
-            <ul className="space-y-3 font-display text-2xl md:text-3xl">
-              {["Wedding & Portrait", "Brand & Product", "Short Film & Reels", "Event Coverage"].map((d) => (
-                <li key={d} className="border-b border-border pb-3 flex items-center justify-between">
-                  <span>{d}</span>
-                  <span className="text-gold text-base font-mono">↗</span>
-                </li>
-              ))}
-            </ul>
+      {/* SERVICES */}
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-24 md:py-32">
+          <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground mb-12">
+            [ Studio Services ]
+          </p>
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-20">
+            {[
+              { t: "Photography.", items: ["Portrait & Editorial", "Weddings & Events", "Brand & Product", "Documentary"] },
+              { t: "Videography.", items: ["Short Films", "Brand Films", "Reels & Social", "Event Coverage"] },
+              { t: "Direction.", items: ["Concept Development", "Storyboarding", "On-set Direction", "Creative Producing"] },
+              { t: "Post-Production.", items: ["Color Grading", "Editing", "Sound Design", "Final Delivery"] },
+            ].map((s) => (
+              <div key={s.t}>
+                <h3 className="font-display font-light text-4xl md:text-6xl tracking-[-0.04em] leading-none mb-8">{s.t}</h3>
+                <ul className="space-y-3 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                  {s.items.map((i) => <li key={i} className="flex justify-between border-b border-border pb-3">
+                    <span>{i}</span><span className="text-foreground/40">→</span>
+                  </li>)}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* QUOTE */}
+      {/* CASE TILES */}
       <section className="border-t border-border">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-24 md:py-40 text-center">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-8">— Philosophy</p>
-          <blockquote className="font-display text-3xl md:text-6xl leading-tight text-balance max-w-5xl mx-auto">
-            "I believe every idea — a business, a wedding, a film —
-            deserves to be developed to its <em className="gold-text not-italic">next level</em>."
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-24">
+          <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground mb-8">Case studies</p>
+          <h2 className="font-display font-light text-5xl md:text-8xl leading-[0.9] tracking-[-0.04em] mb-16">
+            Deep dives into <em className="not-italic text-muted-foreground">our craft.</em>
+          </h2>
+          <div className="grid md:grid-cols-2 gap-px bg-border">
+            {[
+              { n: "01", cat: "Wildlife · 2024", title: "Nilgiri Tahr", img: ibex, m1: "5h", m1l: "Hike · solo", m2: "1", m2l: "Frame · keeper" },
+              { n: "02", cat: "Nature · 2023", title: "Backyard Parrot", img: parrot, m1: "1/500", m1l: "Shutter · stillness", m2: "200mm", m2l: "Lens · patient" },
+              { n: "03", cat: "Mood · 2023", title: "KL 25", img: bike, m1: "1", m1l: "Bike · analog soul", m2: "Dusk", m2l: "Light · golden" },
+              { n: "04", cat: "Animal · 2024", title: "Garden Cat", img: ibex, m1: "0.4s", m1l: "Exposure · intimate", m2: "50mm", m2l: "Lens · honest" },
+            ].map((c) => (
+              <Link to="/work" key={c.n} className="group bg-background p-8 md:p-10 hover:bg-card transition">
+                <div className="flex justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-8">
+                  <span>{c.n}</span><span>{c.cat}</span>
+                </div>
+                <div className="aspect-[16/10] overflow-hidden bg-card mb-8">
+                  <img src={c.img} alt={c.title} loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition duration-700" />
+                </div>
+                <h3 className="font-display font-light text-3xl md:text-4xl tracking-[-0.04em]">{c.title}</h3>
+                <div className="mt-8 grid grid-cols-2 gap-4">
+                  <div><p className="font-display font-light text-2xl">{c.m1}</p><p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">{c.m1l}</p></div>
+                  <div><p className="font-display font-light text-2xl">{c.m2}</p><p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">{c.m2l}</p></div>
+                </div>
+                <span className="mt-8 inline-block font-mono text-[10px] uppercase tracking-[0.3em] border-b border-foreground pb-1 group-hover:text-muted-foreground">Read case study →</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PHILOSOPHY */}
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-32 md:py-48 text-center">
+          <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground mb-10">— Philosophy</p>
+          <blockquote className="font-display font-light text-3xl md:text-7xl leading-[1] tracking-[-0.04em] text-balance max-w-5xl mx-auto">
+            "Every idea — a business, a wedding, a film — deserves to be developed
+            <em className="not-italic text-muted-foreground"> to its next level.</em>"
           </blockquote>
-          <p className="mt-10 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            — Muhammed Arif S
-          </p>
+          <p className="mt-12 font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">— Muhammed Arif S</p>
         </div>
       </section>
     </>
-  );
-}
-
-function FeatureCard({ img, kind, title, year, className = "" }: { img: string; kind: string; title: string; year: string; className?: string }) {
-  return (
-    <Link to="/work" className={`group relative block overflow-hidden bg-card ${className}`}>
-      <img
-        src={img}
-        alt={title}
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-90" />
-      <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between">
-        <div className="flex justify-between font-mono text-[10px] uppercase tracking-[0.3em]">
-          <span className="text-gold">{kind}</span>
-          <span className="text-muted-foreground">{year}</span>
-        </div>
-        <div>
-          <h3 className="font-display text-2xl md:text-4xl">{title}</h3>
-          <span className="inline-block mt-2 text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground group-hover:text-gold transition">
-            View case →
-          </span>
-        </div>
-      </div>
-    </Link>
   );
 }
