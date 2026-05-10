@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect } from "react";
 import portrait from "@/assets/portrait-hero.png";
 import portraitArt from "@/assets/portrait-art.png";
 import rain from "@/assets/photo-rain.jpg";
