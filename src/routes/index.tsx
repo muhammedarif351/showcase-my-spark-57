@@ -174,7 +174,70 @@ function Index() {
         </p>
       </section>
 
-      {/* CHAPTERS */}
+      {/* SHOWREEL — Instagram */}
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-24 md:py-32 grid md:grid-cols-12 gap-12 items-start">
+          <div className="md:col-span-5">
+            <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground mb-8">
+              ▶ Showreel · 2025
+            </p>
+            <h2 className="font-display font-light text-5xl md:text-7xl leading-[0.95] tracking-[-0.04em]">
+              Frame one,<br />
+              <em className="not-italic text-muted-foreground">in motion.</em>
+            </h2>
+            <p className="mt-8 text-muted-foreground leading-relaxed max-w-md">
+              A short clip from behind the lens — direction, movement and edit
+              by the studio. Watch on Instagram for the full reel.
+            </p>
+            <a
+              href={REEL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 inline-flex items-center gap-3 border border-border px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.25em] hover:border-foreground transition"
+            >
+              Watch on Instagram →
+            </a>
+            <div className="mt-12 grid grid-cols-2 gap-6 max-w-sm">
+              <div className="border-l border-border pl-4">
+                <p className="font-display font-light text-3xl">9:16</p>
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">Aspect · vertical</p>
+              </div>
+              <div className="border-l border-border pl-4">
+                <p className="font-display font-light text-3xl">1×</p>
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-1">Take · final cut</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="md:col-span-7 relative">
+            <div className="flex justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">
+              <span>Reel · @muhammedarif</span>
+              <span>Live embed</span>
+            </div>
+            <div className="bg-card border border-border p-3 md:p-6 flex justify-center">
+              <blockquote
+                className="instagram-media"
+                data-instgrm-permalink={`${REEL_URL}?utm_source=ig_embed&utm_campaign=loading`}
+                data-instgrm-version="14"
+                style={{
+                  background: "#000",
+                  border: 0,
+                  margin: 0,
+                  maxWidth: 540,
+                  minWidth: 280,
+                  width: "100%",
+                }}
+              />
+            </div>
+            <div className="flex justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-4">
+              <span>↑ tap to play</span>
+              <span>00:00 / reel</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section className="border-t border-border">
         {CHAPTERS.map((c, i) => (
           <article key={c.n} className="border-b border-border">
