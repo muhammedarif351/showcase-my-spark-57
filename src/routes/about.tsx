@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import portrait from "@/assets/portrait-art.png";
+import portrait from "@/assets/portrait-about.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -31,7 +31,6 @@ function About() {
           </div>
           <dl className="mt-10 space-y-4 font-mono text-xs uppercase tracking-[0.2em]">
             {[
-              ["Born", "Kerala, India · 1995"],
               ["Based", "Saihat, Dammam — KSA"],
               ["Languages", "English · Hindi · Arabic"],
               ["Diploma", "Mechanical Engineering, 2015"],
